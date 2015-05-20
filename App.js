@@ -27,11 +27,9 @@ Ext.define('CustomApp', {
         var count = 0;
         var selectedReleases = this.down('rallymultiobjectpicker')._getRecordValue();
         console.log(selectedReleases.length);
-        var releases;
-        var numOfDays = 2;
         if (selectedReleases.length > 0) {
             _.each(selectedReleases, function(release){
-                console.log('release:',release.data.ObjectID, 'release theme:', release.get('Theme'));
+                console.log('release:',release.get('ObjectID'), 'release theme:', release.get('Theme'));
                 release.set('Theme', 'some text goes here...');
                 release.save({
                     callback: function(result, operation) {
